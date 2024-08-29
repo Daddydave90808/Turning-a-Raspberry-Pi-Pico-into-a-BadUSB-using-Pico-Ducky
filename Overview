@@ -1,0 +1,28 @@
+Project Overview
+A few months ago, I converted a Raspberry Pi Pico into a BadUSB device using the https://github.com/dbisu/pico-ducky project. The Pi Pico is a microcontroller that can be programmed to act like an HID device, such as a keyboard.
+With this in mind, I made one that could perform defined scripts as if a user had typed them onto the host computer.
+
+Why I chose Pico-Ducky
+Pico-Ducky is one of the projects I like, as it elaborates on how to turn a Raspberry Pi Pico into a BadUSB. Generally speaking, this device is widely utilized in penetration testing as an attack surface based on USB.
+This open-source project gives you a scriptable Pineapple-style payload injection environment machined atop the HID attack to replace the pricier, souped-up variants made for hardcore pocket computer users.
+
+Steps I Followed
+Setting Up the Environment:
+
+Hardware: I used a Raspberry Pi Pico microcontroller, a micro USB cable, and a computer for programming the Pico.
+Software: I followed the setup instructions provided in the Pico-Ducky repository. This involved downloading the necessary tools and scripts from the GitHub repository.
+Flashing the Pico:
+
+First, I put the Raspberry Pi Pico into bootloader mode by holding down the BOOTSEL button while connecting it to my computer via USB.
+I then copied the pico-ducky.uf2 firmware file to the Pico, which allowed it to be recognized as a USB device capable of executing HID scripts.
+Creating Payloads:
+
+The Pico-Ducky framework uses scripts written in DuckyScript, a simple scripting language designed for automating keystrokes.
+I created a few test scripts, such as opening a terminal and typing out commands or launching a web browser and navigating to a specific URL.
+Deploying the Payloads:
+
+Once my scripts were ready, I loaded them onto the Pico. I did this by placing the script files onto the Pico's storage, where they would be automatically executed when plugged into a host machine.
+Testing and Troubleshooting:
+
+I tested the device on different operating systems including Windows and my Linux laptop to test compatibility.
+I encountered some minor issues with timing and delays, which I adjusted by modifying the DuckyScript to better align with the response times of different systems.
